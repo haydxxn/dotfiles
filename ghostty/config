@@ -1,5 +1,5 @@
-theme = vesper
-font-family = "Dank Mono"
-font-size = 13
+theme = tokyonight_moon
+font-family = "JetBrains Mono"
+font-size = 12
 font-thicken = true
 font-feature = -liga

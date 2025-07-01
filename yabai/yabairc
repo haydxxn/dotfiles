@@ -1,4 +1,4 @@
-osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
+# osascript -e 'tell application id "tracesOf.Uebersicht" to refresh'
 yabai -m signal --add event=dock_did_restart action="sudo yabai --load-sa"
 sudo yabai --load-sa
 
@@ -33,30 +33,30 @@ function yabai_rule {
 }
 
 # Space 1
-yabai_rule app="^Zen$" space=^1
+yabai_rule app="^Dia$" space=^1
+yabai_rule app="Notion Mail" space=^1
 
 # Space 2
 yabai_rule app="Code" space=^2
 yabai_rule app="Cursor" space=^2
-yabai_rule app="Windsurf" space=^2
-yabai_rule app="Zed" space=^2
 yabai_rule app="^Simulator$" space=^2
 
 # Space 3
 yabai_rule app="Ghostty" space=^3
+yabai_rule app="Things" space=^3
 
 # Space 4
 yabai_rule app="^Spotify$" space=^4
 yabai_rule app="^Music$" space=^4
-yabai_rule app="Discord" space=^4
+yabai_rule app="Legcord" space=^4
 yabai_rule app="Notion" space=^4
-yabai_rule app="Things" space=^4
 
 # Space 5
 yabai -m space 5 --layout stack
 yabai_rule app="OrbStack" space=^5
 yabai_rule app="Azure Data Studio" space=^5
 yabai_rule app="Figma" space=^5
+yabai_rule app="Notion Calendar" space=^5
 
 # Disable specific apps
 # For yabai_rule app=".*" sub-layer=normal to apply to windows that are already opened before yabai is launched or this rule is added
@@ -67,6 +67,7 @@ yabai_rule app="^System Settings$" manage=off
 yabai_rule app="^Karabiner-Elements$" manage=off
 yabai_rule app="^Stats$" manage=off
 yabai_rule app="^Hearthstone$" manage=off
-yabai_rule app="LobeHub-Beta" mouse_follows_focus=on sticky=on
+yabai_rule app="^Anki$" manage=off
+# yabai_rule app="LobeChat" mouse_follows_focus=on sticky=on
 # yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
 # yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on manage=off
