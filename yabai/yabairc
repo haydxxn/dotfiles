@@ -43,12 +43,11 @@ yabai_rule app="^Simulator$" space=^2
 
 # Space 3
 yabai_rule app="Ghostty" space=^3
-yabai_rule app="Things" space=^3
 
 # Space 4
 yabai_rule app="^Spotify$" space=^4
 yabai_rule app="^Music$" space=^4
-yabai_rule app="Legcord" space=^4
+yabai_rule app="Discord" space=^4
 yabai_rule app="Notion" space=^4
 
 # Space 5
@@ -68,6 +67,5 @@ yabai_rule app="^Karabiner-Elements$" manage=off
 yabai_rule app="^Stats$" manage=off
 yabai_rule app="^Hearthstone$" manage=off
 yabai_rule app="^Anki$" manage=off
-# yabai_rule app="LobeChat" mouse_follows_focus=on sticky=on
-# yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
-# yabai_rule app="Jan" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on manage=off
+yabai_rule app="Things" grid=10:4:1:1:2:8 mouse_follows_focus=on sticky=on
+

@@ -1,17 +1,16 @@
 alt - d : yabai -m window --toggle zoom-parent
 alt - f : yabai -m window --toggle zoom-fullscreen
 alt - tab : [ $(yabai -m query --windows --space | jq -re "map(select(.\"has-focus\" == true)) | length != 0") = true ] && yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")" ||  yabai -m window --focus "$(yabai -m query --spaces --space | jq -re ".windows[0]?")" &> /dev/null
-alt - x : yabai -m window --minimize
 
 # toggle sticky (show on all spaces)
 alt - a : yabai -m window --sub-layer above
 alt - s : yabai -m window --sub-layer normal
 
 # focus window
-alt - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
-alt - j : yabai -m window --focus south
-alt - k : yabai -m window --focus north
-alt - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
+hyper - h : yabai -m window --focus west || yabai -m window --focus stack.prev || yabai -m window --focus stack.last
+hyper - j : yabai -m window --focus south
+hyper - k : yabai -m window --focus north
+hyper - l : yabai -m window --focus east || yabai -m window --focus stack.next || yabai -m window --focus stack.first
 
 # swap window
 alt + shift - h : yabai -m window --swap west

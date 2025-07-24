@@ -5,11 +5,11 @@
             "complex_modifications": {
                 "rules": [
                     {
-                        "description": "Left Command Key → Hyper Key (⌃⌥⇧⌘)",
+                        "description": "Left Option Key → Hyper Key (⌃⌥⇧⌘)",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "left_command",
+                                    "key_code": "left_option",
                                     "modifiers": { "optional": ["any"] }
                                 },
                                 "to": [
@@ -24,9 +24,9 @@
                     },
                     {
                         "description": "Remap Command+M to Command+H for Hide",
+                        "enabled": false,
                         "manipulators": [
                             {
-                                "type": "basic",
                                 "from": {
                                     "key_code": "m",
                                     "modifiers": {
@@ -39,7 +39,8 @@
                                         "key_code": "h",
                                         "modifiers": ["command"]
                                     }
-                                ]
+                                ],
+                                "type": "basic"
                             }
                         ]
                     },
@@ -142,14 +143,14 @@
                         ]
                     },
                     {
-                        "description": "Open LobeChat Application",
+                        "description": "Open Claude Application",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "l",
+                                    "key_code": "m",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'LobeHub-Beta.app'" }],
+                                "to": [{ "shell_command": "open -a 'Claude.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -159,7 +160,7 @@
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "v",
+                                    "key_code": "c",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
                                 "to": [{ "shell_command": "open -a 'Things3.app'" }],
@@ -168,20 +169,8 @@
                         ]
                     },
                     {
-                        "description": "Open Dia Application",
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "a",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Dia.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
                         "description": "Open Notion Calendar Application",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -195,6 +184,7 @@
                     },
                     {
                         "description": "Open Notion Application",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
@@ -208,19 +198,21 @@
                     },
                     {
                         "description": "Open Code Application",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
                                     "key_code": "c",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Cursor.app'" }],
+                                "to": [{ "shell_command": "open -a 'Visual Studio Code.app'" }],
                                 "type": "basic"
                             }
                         ]
                     },
                     {
                         "description": "Open Ghostty Application",
+                        "enabled": false,
                         "manipulators": [
                             {
                                 "from": {
