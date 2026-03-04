@@ -1,5 +1,10 @@
-theme = tokyonight_moon
-font-family = "JetBrains Mono"
+theme = "Solarized Dark Patched"
+
+background-opacity = 0.9
+background-blur-radius = 20
+background = #031219
+
+font-family = "Hack Nerd Font Mono"
 font-size = 12
 font-thicken = true
 font-feature = -liga

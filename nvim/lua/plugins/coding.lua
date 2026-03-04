@@ -1,35 +1,35 @@
 return {
-  {
-    "zbirenbaum/copilot.lua",
-    cmd = "Copilot",
-    build = ":Copilot auth",
-    opts = {
-      suggestion = { enabled = true },
-      panel = { enabled = false },
-      filetypes = {
-        rust = true,
-        lua = true,
-        markdown = true,
-        help = true,
-      },
-    },
-  },
-  {
-    "zbirenbaum/copilot-cmp",
-    dependencies = "copilot.lua",
-    opts = {},
-    config = function(_, opts)
-      local copilot_cmp = require("copilot_cmp")
-      copilot_cmp.setup(opts)
-      -- attach cmp source whenever copilot attaches
-      -- fixes lazy-loading issues with the copilot cmp source
-      LazyVim.lsp.on_attach(function(client)
-        if client.name == "copilot" then
-          copilot_cmp._on_insert_enter({})
-        end
-      end)
-    end,
-  },
+  -- {
+  --   "zbirenbaum/copilot.lua",
+  --   cmd = "Copilot",
+  --   build = ":Copilot auth",
+  --   opts = {
+  --     suggestion = { enabled = true },
+  --     panel = { enabled = false },
+  --     filetypes = {
+  --       rust = true,
+  --       lua = true,
+  --       markdown = true,
+  --       help = true,
+  --     },
+  --   },
+  -- },
+  -- {
+  --   "zbirenbaum/copilot-cmp",
+  --   dependencies = "copilot.lua",
+  --   opts = {},
+  --   config = function(_, opts)
+  --     local copilot_cmp = require("copilot_cmp")
+  --     copilot_cmp.setup(opts)
+  --     -- attach cmp source whenever copilot attaches
+  --     -- fixes lazy-loading issues with the copilot cmp source
+  --     LazyVim.lsp.on_attach(function(client)
+  --       if client.name == "copilot" then
+  --         copilot_cmp._on_insert_enter({})
+  --       end
+  --     end)
+  --   end,
+  -- },
   {
     "hrsh7th/nvim-cmp",
     dependencies = {
@@ -44,22 +44,22 @@ return {
           },
         },
       },
-      {
-        "zbirenbaum/copilot-cmp",
-        dependencies = "copilot.lua",
-        opts = {},
-        config = function(_, opts)
-          local copilot_cmp = require("copilot_cmp")
-          copilot_cmp.setup(opts)
-          -- attach cmp source whenever copilot attaches
-          -- fixes lazy-loading issues with the copilot cmp source
-          LazyVim.lsp.on_attach(function(client)
-            if client.name == "copilot" then
-              copilot_cmp._on_insert_enter({})
-            end
-          end)
-        end,
-      },
+      -- {
+      --   "zbirenbaum/copilot-cmp",
+      --   dependencies = "copilot.lua",
+      --   opts = {},
+      --   config = function(_, opts)
+      --     local copilot_cmp = require("copilot_cmp")
+      --     copilot_cmp.setup(opts)
+      --     -- attach cmp source whenever copilot attaches
+      --     -- fixes lazy-loading issues with the copilot cmp source
+      --     LazyVim.lsp.on_attach(function(client)
+      --       if client.name == "copilot" then
+      --         copilot_cmp._on_insert_enter({})
+      --       end
+      --     end)
+      --   end,
+      -- },
     },
     ---@param opts cmp.ConfigSchema
     opts = function(_, opts)
@@ -106,17 +106,17 @@ return {
         -- unique to CompletionIntemKind
         Reference = "",
         -- Codeium = require("lazyvim.config").icons.kinds.Codeium,
-        Copilot = require("lazyvim.config").icons.kinds.Copilot,
+        -- Copilot = require("lazyvim.config").icons.kinds.Copilot,
       }
 
       opts.sources = opts.sources or {}
 
-      table.insert(opts.sources, { name = "crates" })
-      table.insert(opts.sources, 1, {
-        name = "copilot",
-        group_index = 1,
-        priority = 100,
-      })
+      -- table.insert(opts.sources, { name = "crates" })
+      -- table.insert(opts.sources, 1, {
+      --   name = "copilot",
+      --   group_index = 1,
+      --   priority = 100,
+      -- })
 
       opts.formatting = {
         fields = { "kind", "abbr", "menu" },
@@ -184,7 +184,7 @@ return {
     opts = { snippet_engine = "luasnip" },
   },
   {
-    "echasnovski/mini.surround",
+    "nvim-mini/mini.surround",
     opts = {
       mappings = {
         add = "gsa",

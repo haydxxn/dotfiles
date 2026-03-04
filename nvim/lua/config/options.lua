@@ -14,3 +14,6 @@ vim.opt.clipboard = ""
 -- LSP Server to use for Python.
 vim.g.lazyvim_python_lsp = "pyright"
 vim.g.lazyvim_python_ruff = "ruff_lsp"
+
+-- Set to false to disable auto format
+vim.g.lazyvim_eslint_auto_format = true
