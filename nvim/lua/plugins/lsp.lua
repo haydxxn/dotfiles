@@ -57,6 +57,41 @@ return {
             },
           },
         },
+        clangd = {
+          keys = {
+            { "<leader>ch", "<cmd>LspClangdSwitchSourceHeader<cr>", desc = "Switch Source/Header (C/C++)" },
+          },
+          root_markers = {
+            "compile_commands.json",
+            "compile_flags.txt",
+            "configure.ac", -- AutoTools
+            "Makefile",
+            "configure.ac",
+            "configure.in",
+            "config.h.in",
+            "meson.build",
+            "meson_options.txt",
+            "build.ninja",
+            ".git",
+          },
+          capabilities = {
+            offsetEncoding = { "utf-16" },
+          },
+          cmd = {
+            "clangd",
+            "--background-index",
+            "--clang-tidy",
+            "--header-insertion=iwyu",
+            "--completion-style=detailed",
+            "--function-arg-placeholders",
+            "--fallback-style=llvm",
+          },
+          init_options = {
+            usePlaceholders = true,
+            completeUnimported = true,
+            clangdFileStatus = true,
+          },
+        },
         tailwindcss = {
           -- exclude a filetype from the default_config
           filetypes_exclude = { "markdown" },
@@ -87,5 +122,60 @@ return {
         end,
       },
     },
+  },
+  {
+    "folke/snacks.nvim",
+    opts = {
+      -- keep your existing snacks opts, just make sure terminal is enabled
+      terminal = {
+        win = { style = "terminal" },
+      },
+    },
+    config = function(_, opts)
+      require("snacks").setup(opts)
+      local Snacks = require("snacks")
+
+      -- one mapping for both C and C++
+      vim.api.nvim_create_autocmd("FileType", {
+        pattern = { "c", "cpp" },
+        callback = function(ev)
+          vim.keymap.set("n", "<leader>rr", function()
+            vim.cmd.write()
+
+            local ft = vim.bo[ev.buf].filetype
+            local file = vim.fn.expand("%:p")
+            local output = vim.fn.expand("%:p:r")
+
+            local compiler
+            local flags = ""
+
+            if ft == "c" then
+              compiler = "gcc"
+              flags = "-Wall -Wextra -std=c11"
+            else
+              compiler = "g++"
+              flags = "-Wall -Wextra -std=c++20"
+            end
+
+            local cmd = string.format(
+              '%s %s "%s" -o "%s" && "%s"; echo ""; echo "Press ENTER to close..."',
+              compiler,
+              flags,
+              file,
+              output,
+              output
+            )
+
+            Snacks.terminal.open({ vim.o.shell, "-c", cmd }, {
+              cwd = vim.fn.getcwd(),
+              interactive = true,
+              auto_close = false,
+              start_insert = true,
+              auto_insert = true,
+            })
+          end, { buffer = ev.buf, desc = "Compile & run C/C++ (Snacks term)" })
+        end,
+      })
+    end,
   },
 }

@@ -25,6 +25,7 @@ return {
       "vim",
       "yaml",
       "c",
+      "cpp",
     },
     ignore_install = { "help" },
     indent = { enable = true },
