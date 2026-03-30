@@ -18,7 +18,7 @@ yabai -m config window_topmost on # Some application/windows appear to have trou
 yabai -m config auto_balance off
 yabai -m config window_animation_duration    0.0
 yabai -m config mouse_follows_focus on
-yabai -m config external_bar all:0:0
+yabai -m config external_bar main:0:0
 
 # Set all padding and gaps to 20pt (default: 0)
 yabai -m config top_padding    8
