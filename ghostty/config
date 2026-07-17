@@ -1,10 +1,5 @@
-theme = "Solarized Dark Patched"
-
-background-opacity = 0.9
-background-blur-radius = 20
-background = #031219
-
-font-family = "Hack Nerd Font Mono"
+theme = Vesper
+font-family = "Menlo"
 font-size = 12
 font-thicken = true
 font-feature = -liga
