@@ -1,4 +1,5 @@
 export PATH=/Users/hayden/.local/bin:$PATH
+export PATH="$PATH:/Users/hayden/.dotnet/tools"
 export LSCOLORS="exfxcxdxbxegedabagacad"
 
 eval "$(zoxide init zsh)"

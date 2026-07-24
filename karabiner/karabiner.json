@@ -169,29 +169,14 @@
                         ]
                     },
                     {
-                        "description": "Open Notion Calendar Application",
-                        "enabled": false,
+                        "description": "Open Obsidian Application",
                         "manipulators": [
                             {
                                 "from": {
-                                    "key_code": "r",
+                                    "key_code": "o",
                                     "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
                                 },
-                                "to": [{ "shell_command": "open -a 'Notion Calendar.app'" }],
-                                "type": "basic"
-                            }
-                        ]
-                    },
-                    {
-                        "description": "Open Notion Application",
-                        "enabled": false,
-                        "manipulators": [
-                            {
-                                "from": {
-                                    "key_code": "n",
-                                    "modifiers": { "mandatory": ["left_command", "left_control", "left_shift", "left_option"] }
-                                },
-                                "to": [{ "shell_command": "open -a 'Notion.app'" }],
+                                "to": [{ "shell_command": "open -a 'Obsidian.app'" }],
                                 "type": "basic"
                             }
                         ]
@@ -255,6 +240,10 @@
                 {
                     "from": { "key_code": "f4" },
                     "to": [{ "key_code": "caps_lock" }]
+                },
+                {
+                    "from": { "key_code": "f6" },
+                    "to": [{ "key_code": "semicolon" }]
                 }
             ],
             "name": "Default profile",

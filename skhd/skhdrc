@@ -95,7 +95,7 @@ hyper - e : yabai -m space --focus 3;
 hyper - d : yabai -m space --focus 4;
 hyper - f : yabai -m space --focus 5;
 
-hyper - o : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
+# hyper - o : yabai -m window --focus "$(yabai -m query --windows --space | jq -re "[sort_by(.id, .frame) | reverse | .[] | select(.role == \"AXWindow\" and .subrole == \"AXStandardWindow\") | .id] | nth(index($(yabai -m query --windows --window | jq -re ".id")) - 1)")"
 
 
 # hyper - i : yabai -m space --focus 1 && yabai -m window --focus "$(yabai -m query --windows --space | jq .[0].id)"

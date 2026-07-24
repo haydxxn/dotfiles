@@ -41,10 +41,20 @@ return {
       })
     end,
   },
-  -- {
-  --   "svrana/neosolarized.nvim",
-  --   dependencies = { "tjdevries/colorbuddy.nvim" },
-  -- },
+  {
+    "svrana/neosolarized.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("neosolarized").setup({
+        comment_italics = true,
+        background_set = true,
+      })
+    end,
+    dependencies = {
+      "tjdevries/colorbuddy.nvim",
+    },
+  },
   {
     "Mofiqul/dracula.nvim",
     lazy = false,
@@ -121,16 +131,16 @@ return {
       -- })
     end,
   },
-  -- {
-  --   "maxmx03/solarized.nvim",
-  --   lazy = false,
-  --   priority = 1000,
-  --   config = function()
-  --     require("solarized").setup({
-  --       -- theme = "neo",
-  --     })
-  --   end,
-  -- },
+  {
+    "maxmx03/solarized.nvim",
+    lazy = false,
+    priority = 1000,
+    config = function()
+      require("solarized").setup({
+        -- theme = "neo",
+      })
+    end,
+  },
   -- { "joshdick/onedark.vim" },
   {
     "folke/noice.nvim",
